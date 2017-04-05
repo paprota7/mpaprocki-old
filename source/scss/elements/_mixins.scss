@@ -1,0 +1,39 @@
+@mixin link ($link, $visit, $hover, $active) {
+	color: $link;
+
+	&:visited {
+		@media (min-width: $screen-md-min) {
+			color: $visit;
+		}
+	}
+
+	&:hover {
+		@media (min-width: $screen-md-min) {
+			color: $hover;
+		}
+	}
+
+	&:active {
+		@media (min-width: $screen-md-min) {
+			color: $active;
+		}
+	}
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
