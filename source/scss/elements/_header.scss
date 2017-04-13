@@ -1,12 +1,26 @@
 .header {
-	margin-top: 50px;
 	z-index: 100;
 	width: 100%;
-	height: 90px;
+	background-color: $c-white;
+	@media (max-width: $screen-xs-max) {
+		margin-top: 10px;
+		height: 60px;
+	}
+	@media (min-width: $screen-sm-min) {
+		margin-top: 20px;
+		height: 90px;
+	}
+	@media (min-width: $screen-md-min) {
+		margin-top: 50px;
+	}
 
 	&__wrapper {
-		padding: 10px 20px;
-		background-color: $c-white;
+		@media (max-width: $screen-xs-max) {
+			padding: 5px 0;
+		}
+		@media (min-width: $screen-sm-min) {
+			padding: 10px 20px;
+		}
 		@include clearfix;
 	}
 
@@ -19,8 +33,15 @@
 			display: block;
 
 			&--mobile {
-				height: 70px;
-				display: none;
+				@media (max-width: $screen-xs-max) {
+					height: 50px;
+				}
+				@media (min-width: $screen-sm-min) {
+					height: 70px;
+				}
+				@media (min-width: $screen-md-min) {
+					display: none;
+				}
 			}
 
 			&--normal {
@@ -29,6 +50,40 @@
 				width: 20vw;
 				position: absolute;
 				transition: all 0.1s linear;
+				@media (max-width: $screen-sm-max) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__toggle {
+		display: block;
+		float: right;
+		@media (max-width: $screen-xs-max) {
+			padding: 12px;
+		}
+		@media (min-width: $screen-sm-min) {
+			padding: 18px;
+		}
+		@media (min-width: $screen-md-min) {
+			display: none;
+		}
+
+		.bar {
+			display: block;
+			background-color: $c-red;
+			@media (max-width: $screen-xs-max) {
+				width: 30px;
+				height: 2px;
+			}
+			@media (min-width: $screen-sm-min) {
+				width: 40px;
+				height: 3px;
+			}
+
+			&+ .bar {
+				margin-top: 10px;
 			}
 		}
 	}

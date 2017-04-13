@@ -1,6 +1,11 @@
 .navigation {
-	float: right;
-	display: block;
+	@media (max-width: $screen-sm-max) {
+		display: none;
+	}
+	@media (min-width: $screen-md-min) {
+		float: right;
+		display: block;
+	}
 
 	&__menu {
 		margin: 0;

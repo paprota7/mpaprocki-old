@@ -3,7 +3,9 @@
 	left: 40px;
 	bottom: 20px;
 	z-index: 10;
-
+	@media (max-width: $screen-sm-max) {
+		display: none;
+	}
 
 	&__menu {
 		padding: 0;

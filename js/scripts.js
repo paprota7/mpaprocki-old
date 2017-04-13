@@ -111,6 +111,18 @@ jQuery.noConflict();
 				});
 			}
 
+			function startLoader() {
+				if ($(window).outerWidth() >= 992) {
+					loader.animate({
+						width: '66.666%'
+					}, 5000);
+				} else {
+					loader.animate({
+						width: '100%'
+					}, 5000);
+				}
+			}
+
             sliderLeft.slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -134,9 +146,7 @@ jQuery.noConflict();
             });
 
 			changeContent(0);
-            loader.animate({
-                width: '66.666%'
-            }, 5000)
+			startLoader();
 
             next.click(function() {
                 sliderRight.slick('slickNext');
@@ -148,9 +158,7 @@ jQuery.noConflict();
             });
 
             sliderRight.on('afterChange', function(event, slick, currentSlide) {
-                loader.animate({
-                    width: '66.666%'
-                }, 5000);
+                startLoader();
             });
         }
 
