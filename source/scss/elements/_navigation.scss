@@ -1,0 +1,54 @@
+.navigation {
+	float: right;
+	display: block;
+
+	&__menu {
+		margin: 0;
+		padding: 0;
+		@include clearfix;
+
+		li {
+			display: block;
+			float: left;
+
+			a {
+				position: relative;
+				display: block;
+				margin: 0 5px;
+				color: $c-red;
+				font-size: 18px;
+				font-weight: 500;
+				line-height: 70px;
+				padding: 0 15px;
+				text-decoration: none;
+				transition: all 0.2s linear;
+
+				&:after {
+					@media (min-width: $screen-md-min) {
+						content: '';
+						display: block;
+						width: 0;
+						position: absolute;
+						bottom: 0;
+						left: 50%;
+						height: 3px;
+						transition: width 0.2s linear;
+						background-color: $c-red;
+						transform: translateX(-50%);
+					}
+				}
+
+				&:hover {
+					@media (min-width: $screen-md-min) {
+						margin-top: -3px;
+					}
+					&:after {
+						@media (min-width: $screen-md-min) {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

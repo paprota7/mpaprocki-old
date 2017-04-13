@@ -1,0 +1,52 @@
+.header {
+	margin-top: 50px;
+	z-index: 100;
+	width: 100%;
+	height: 90px;
+
+	&__wrapper {
+		padding: 10px 20px;
+		background-color: $c-white;
+		@include clearfix;
+	}
+
+	&__logo {
+		display: block;
+		float: left;
+		position: relative;
+
+		&__img {
+			display: block;
+
+			&--mobile {
+				height: 70px;
+				display: none;
+			}
+
+			&--normal {
+				top: 3vw;
+				left: 9vw;
+				width: 20vw;
+				position: absolute;
+				transition: all 0.1s linear;
+			}
+		}
+	}
+
+	&--fixed {
+		position: fixed;
+		top: 0;
+		margin: 0;
+		left: 0;
+		right: 0;
+
+		.header__logo__img {
+			&--normal {
+				height: 70px;
+				top: 0;
+				left: 0;
+				width: auto;
+			}
+		}
+	}
+}

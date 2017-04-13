@@ -5,15 +5,17 @@ jQuery.noConflict();
 
     window.wdstudio = {
         init: function() {
-            this.preloader();
-            this.socials();
-            this.parallax();
-            this.navigation();
-            this.fixHeader();
-            this.screenModeEvent()
+            this.screenModeEvent();
+            this.slider();
+			this.fixHeader();
+			this.pageInit();
         },
 
-        getScreenMode: function () {
+        pageInit: function() {
+			$('.preloader').hide('fade', 500);
+        },
+
+        getScreenMode: function() {
             return window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace('"', '').replace('"', '');
         },
 
@@ -28,99 +30,91 @@ jQuery.noConflict();
             });
         },
 
-        navigation: function() {
-            var toggle = $('.navigation__toggle'),
-                navigation = $('.navigation'),
-                menu = $('.navigation__menu'),
-                body  = $('body'),
-                status = true;
-
-            var changePosition = function (mode, init) {
-                if (init) {
-                    if (mode === 'mobile') {
-                        $('body').prepend(navigation);
-                    }
-                } else {
-                    if (mode === 'mobile') {
-                        $('body').prepend(navigation);
-                        menu.removeAttr('style');
-                    } else {
-                        navigation.insertAfter(toggle).removeClass('show');
-                    }
-                    toggle.removeClass('navigation__toggle--active');
-                }
-            };
-
-            var toggleNavigation = function () {
-                if (status) {
-                    status = false;
-                    if (wdstudio.getScreenMode() == 'mobile') {
-                        navigation.toggleClass('navigation--mobile-show');
-                        toggle.toggleClass('navigation__toggle--right');
-                        $('.header__logo').toggleClass('header__logo--hide');
-                        setTimeout(function () {
-                            status = true;
-                        }, 500);
-                    } else {
-                        menu.toggle('slide', {
-                            direction: 'left'
-                        }, 500, function() {
-                            status = true;
-                        });
-                    }
-                    toggle.toggleClass('navigation__toggle--active');
-                }
-            };
-
-            changePosition(wdstudio.getScreenMode(), true);
-
-            $(document).on('changeScreenMode', function(e, mode) {
-                changePosition(mode, false);
-            });
-
-            toggle.on('click', function() {
-                toggleNavigation();
-            });
-        },
-
         fixHeader: function() {
             var header = $('.header'),
-                logo = $('.hero__logo');
+				body = $('body'),
+				headerHeight = header.outerHeight(true),
+				headerOffset = header.offset().top;
 
-            var setHeader = function() {
-                if ($(window).scrollTop() <= (logo.offset().top - header.outerHeight())) {
-                    if (header.hasClass('header--fixed')) {
-                        header.removeClass('header--fixed')
-                    }
-                } else {
-                    if (!header.hasClass('header--fixed')) {
-                        header.addClass('header--fixed')
-                    }
-                }
-            };
+			function changeHeader() {
+				if ($(window).scrollTop() >= headerOffset) {
+					header.addClass('header--fixed');
+					body.css('padding-top', headerHeight);
+				} else {
+					header.removeClass('header--fixed');
+					body.css('padding-top', 0);
+				}
+			};
 
-            setHeader();
+			changeHeader();
 
             $(window).scroll(function() {
-                setHeader();
+                changeHeader();
             });
         },
 
-        preloader: function() {
-            $('.preloader').hide('fade', 1000);
-        },
+        slider: function() {
+			var sliderLeft = $('.slider__left'),
+				sliderRight = $('.slider__right'),
+				sliderRightWrapper = sliderRight.closest('.slider__wrapper--right'),
+				loader = $('.slider__loader'),
+				next = $('.slider__next'),
+				content = sliderRightWrapper.find('.slider__content');
 
-        parallax: function() {
-            $('.hero').parallax({
-                speed: 0.1,
-                imageSrc: '../images/background/bg-hero.jpg'
+			function changeContent (index) {
+				var slide = sliderRight.find('.slider__slide[data-slick-index="' + index + '"]'),
+					title = slide.data('slide-title'),
+					text = slide.data('slide-text'),
+					anchor = slide.data('slide-anchor');
+
+				content.hide('fade', 200, function () {
+					$(this).attr('href', anchor);
+					$(this).find('h2').text(title);
+					$(this).find('p').text(text);
+					$(this).show('drop', {direction: 'up'}, 200);
+				});
+			}
+
+            sliderLeft.slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                focusOnSelect: false,
+                asNavFor: '.slider__right'
             });
-        },
 
-        socials: function() {
-            SocialShareKit.init({
-                url: 'http://wdstudio.eu/',
-                text: 'Web Development, tylko z WDStudio!'
+            sliderRight.slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                focusOnSelect: false,
+                asNavFor: '.slider__left'
+            });
+
+			changeContent(0);
+            loader.animate({
+                width: '66.666%'
+            }, 5000)
+
+            next.click(function() {
+                sliderRight.slick('slickNext');
+            });
+
+            sliderRight.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+				changeContent(nextSlide);
+				loader.stop().css('width', 0);
+            });
+
+            sliderRight.on('afterChange', function(event, slick, currentSlide) {
+                loader.animate({
+                    width: '66.666%'
+                }, 5000);
             });
         }
 

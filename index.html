@@ -14,7 +14,7 @@
 	<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
 	<link rel="manifest" href="/favicons/manifest.json">
-	<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#e4423f">
 	<link rel="shortcut icon" href="/favicons/favicon.ico">
 	<meta name="msapplication-config" content="/favicons/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
@@ -29,6 +29,74 @@
 <body>
 	<span id="preloader" class="preloader"></span>
 
+	<header class="header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="header__wrapper">
+						<a href="#" class="header__logo">
+							<img src="./images/icon-red.svg" alt="Mpaprocki" class="header__logo__img header__logo__img--mobile">
+							<img src="./images/logo.svg" alt="Mpaprocki" class="header__logo__img header__logo__img--normal">
+						</a>
+						<nav class="navigation">
+							<ul class="navigation__menu">
+								<li><a href="#">Główna</a></li>
+								<li><a href="#">O mnie</a></li>
+								<li><a href="#">Portfolio</a></li>
+								<li><a href="#">Oferta</a></li>
+								<li><a href="#">Kontakt</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="hero">
+		<div class="slider__container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="slider__wrapper slider__wrapper--right">
+						<button type="button" class="slider__next">
+							<img src="./images/arrow.svg" alt="Next">
+						</button>
+						<div class="slider__right">
+							<div class="slider__slide" data-slide-title="Web Design" data-slide-text="Tworzenie stron WWW" data-slide-anchor="#">
+								<img src="./images/slides/design-right.jpg" alt="Web Developer">
+							</div>
+							<div class="slider__slide" data-slide-title="Front-End Developer" data-slide-text="Tworzenie części frontendowej dla stron i serwisów WWW" data-slide-anchor="#">
+								<img src="./images/slides/frontend-right.jpg" alt="Front End">
+							</div>
+						</div>
+						<span class="slider__loader"></span>
+						<a href="#" class="slider__content">
+							<h2></h2>
+							<p></p>
+						</a>
+					</div>
+					<div class="slider__wrapper slider__wrapper--left">
+						<div class="slider__left">
+							<div class="slider__slide">
+								<img src="./images/slides/design-left.jpg" alt="Web Design">
+							</div>
+							<div class="slider__slide">
+								<img src="./images/slides/frontend-left.jpg" alt="Front End">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<aside class="socials">
+		<ul class="socials__menu">
+			<li><a href="#"><img src="./images/icon-facebook.svg" alt="Facebook"></a></li>
+			<li><a href="#"><img src="./images/icon-twitter.svg" alt="Twitter"></a></li>
+			<li><a href="#"><img src="./images/icon-github.svg" alt="Github"></a></li>
+		</ul>
+	</aside>
 
 	<script src="./js/scripts.js"></script>
 

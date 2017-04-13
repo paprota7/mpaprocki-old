@@ -7,4 +7,9 @@
 	overflow: hidden;
 	background-color: $c-white;
 	z-index: 999999;
+
+	img {
+		display: block;
+		margin: 0 auto;
+	}
 }
