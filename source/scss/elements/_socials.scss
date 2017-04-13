@@ -14,7 +14,6 @@
 		li {
 			display: block;
 
-
 			a {
 				display: block;
 				margin: 20px 0;
@@ -23,12 +22,16 @@
 					display: block;
 					width: 50px;
 					background-color: $c-white;
-					transition: all 0.2s linear;
+					@media (min-width: $screen-md-min) {
+						transition: all 0.2s linear;
+					}
 				}
 
 				&:hover {
 					img {
-						transform: scale(1.1) rotate(4deg);
+						@media (min-width: $screen-md-min) {
+							transform: scale(1.1) rotate(4deg);
+						}
 					}
 				}
 			}

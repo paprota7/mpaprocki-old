@@ -1,22 +1,21 @@
 @font-face {
-  font-family: 'Sarine';
-  src: url('../fonts/Sarine-Regular.ttf') format('truetype');
+	font-family: 'Sarine';
+	src: url('../fonts/Sarine-Regular.ttf') format('truetype');
 }
-
 @font-face {
-  font-family: 'Sarine';
-  font-weight: 500;
-  src: url('../fonts/Sarine-Medium.ttf') format('truetype');
+	font-family: 'Sarine';
+	font-weight: 500;
+	src: url('../fonts/Sarine-Medium.ttf') format('truetype');
 }
-
 @font-face {
-  font-family: 'Sarine';
-  font-weight: 700;
-  src: url('../fonts/Sarine-Bold.ttf') format('truetype');
+	font-family: 'Sarine';
+	font-weight: 700;
+	src: url('../fonts/Sarine-Bold.ttf') format('truetype');
 }
 
 body {
 	font-family: 'Sarine', sans-serif;
+
 	&:before {
 		display: none;
 		@media (max-width: $screen-xs-max) {
