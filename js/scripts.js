@@ -39,11 +39,12 @@ jQuery.noConflict();
 (function($, window, document) {
     'use strict';
 
-    window.wdstudio = {
+    window.mpaprocki = {
         init: function() {
             this.screenModeEvent();
             this.slider();
 			this.fixHeader();
+			this.mobileMenu();
 			this.pageInit();
         },
 
@@ -56,15 +57,56 @@ jQuery.noConflict();
         },
 
         screenModeEvent: function() {
-            var mode = wdstudio.getScreenMode();
+            var mode = mpaprocki.getScreenMode();
 
             $(window).resize(function() {
-                if (mode !== wdstudio.getScreenMode()) {
-                    mode = wdstudio.getScreenMode();
+                if (mode !== mpaprocki.getScreenMode()) {
+                    mode = mpaprocki.getScreenMode();
                     $(document).trigger('changeScreenMode', String(mode));
                 }
             });
         },
+
+		mobileMenu: function () {
+			var toggle = $('.header__toggle'),
+				header = $('.header'),
+				body = $('body'),
+				nav = $('.navigation'),
+				socials = $('.socials'),
+				headerHeight = header.outerHeight(true),
+				headerOffset = header.offset().top;
+
+			function changeHeader() {
+				if ($(window).scrollTop() >= headerOffset) {
+					header.addClass('header--fixed');
+					body.css('padding-top', headerHeight);
+				} else {
+					header.removeClass('header--fixed');
+					body.css('padding-top', 0);
+				}
+			};
+
+			toggle.click(function(e) {
+                e.preventDefault();
+				if (mpaprocki.getScreenMode() === 'mobile' || mpaprocki.getScreenMode() === 'tablet') {
+					if (nav.hasClass('toggled')) {
+						socials.hide('drop', {direction: 'down'}, 200, function () {
+							nav.hide('slide', {direction: 'up'}, 300, function () {
+								$(this).removeAttr('style').removeClass('toggled');
+							});
+							body.removeAttr('style');
+							changeHeader();
+						});
+					} else {
+						header.addClass('header--fixed');
+						body.css('overflow', 'hidden');
+						nav.css('top', header.outerHeight(true)).show('slide', {direction: 'up'}, 300, function () {
+							socials.show('drop', {direction: 'down'}, 200);
+						}).addClass('toggled');
+					}
+				}
+            });
+		},
 
         fixHeader: function() {
             var header = $('.header'),
@@ -109,7 +151,7 @@ jQuery.noConflict();
 					$(this).find('p').text(text);
 					$(this).show('drop', {direction: 'up'}, 200);
 				});
-			}
+			};
 
 			function startLoader() {
 				if ($(window).outerWidth() >= 992) {
@@ -121,7 +163,7 @@ jQuery.noConflict();
 						width: '100%'
 					}, 5000);
 				}
-			}
+			};
 
             sliderLeft.slick({
                 slidesToShow: 1,
@@ -171,15 +213,15 @@ jQuery.noConflict();
 
 
     $(document).ready(function() {
-        wdstudio.init();
+        mpaprocki.init();
     });
 
     // $(document).on('scroll', function () {
-    //     wdstudio.scrollEvent();
+    //     mpaprocki.scrollEvent();
     // });
     //
     // $(window).on('resize', function () {
-    //     wdstudio.resizeEvent();
+    //     mpaprocki.resizeEvent();
     // });
 
 })(jQuery, window, document);

@@ -45,13 +45,15 @@
 			}
 
 			&--normal {
-				top: 3vw;
-				left: 9vw;
-				width: 20vw;
-				position: absolute;
-				transition: all 0.1s linear;
 				@media (max-width: $screen-sm-max) {
 					display: none;
+				}
+				@media (min-width: $screen-md-min) {
+					top: 3vw;
+					left: 9vw;
+					width: 20vw;
+					position: absolute;
+					transition: all 0.1s linear;
 				}
 			}
 		}
@@ -74,7 +76,7 @@
 			display: block;
 			background-color: $c-red;
 			@media (max-width: $screen-xs-max) {
-				width: 30px;
+				width: 35px;
 				height: 2px;
 			}
 			@media (min-width: $screen-sm-min) {
@@ -97,10 +99,12 @@
 
 		.header__logo__img {
 			&--normal {
-				height: 70px;
-				top: 0;
-				left: 0;
-				width: auto;
+				@media (min-width: $screen-md-min) {
+					height: 70px;
+					top: 0;
+					left: 0;
+					width: auto;
+				}
 			}
 		}
 	}

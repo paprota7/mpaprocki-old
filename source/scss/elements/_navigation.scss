@@ -1,6 +1,13 @@
 .navigation {
 	@media (max-width: $screen-sm-max) {
 		display: none;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 200;
+		overflow-y: auto;
+		background-color: $c-white;
 	}
 	@media (min-width: $screen-md-min) {
 		float: right;
@@ -14,19 +21,28 @@
 
 		li {
 			display: block;
-			float: left;
+			@media (min-width: $screen-md-min) {
+				float: left;
+			}
 
 			a {
 				position: relative;
 				display: block;
-				margin: 0 5px;
 				color: $c-red;
-				font-size: 18px;
 				font-weight: 500;
 				line-height: 70px;
-				padding: 0 15px;
 				text-decoration: none;
-				transition: all 0.2s linear;
+
+				@media (max-width: $screen-sm-max) {
+					font-size: 22px;
+					text-align: center;
+				}
+				@media (min-width: $screen-md-min) {
+					padding: 0 15px;
+					margin: 0 5px;
+					font-size: 18px;
+					transition: all 0.2s linear;
+				}
 
 				&:after {
 					@media (min-width: $screen-md-min) {

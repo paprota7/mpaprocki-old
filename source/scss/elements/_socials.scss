@@ -1,22 +1,51 @@
 .socials {
 	position: fixed;
-	left: 40px;
-	bottom: 20px;
-	z-index: 10;
-	@media (max-width: $screen-sm-max) {
+	@media (max-width: $screen-sm-max) and (orientation: portrait) {
 		display: none;
+		bottom: 20px;
+		z-index: 300;
+		width: 100%;
+	}
+	@media (max-width: $screen-sm-max) and (orientation: landscape) {
+		display: none;
+		bottom: 10px;
+		left: 13px;
+		z-index: 300;
+	}
+	@media (min-width: $screen-md-min) {
+		left: 40px;
+		bottom: 20px;
+		z-index: 10;
 	}
 
 	&__menu {
 		padding: 0;
 		margin: 0;
+		@media (max-width: $screen-sm-max) and (orientation: portrait) {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+		@media (max-width: $screen-sm-max) and (orientation: landscape) {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
 
 		li {
 			display: block;
 
 			a {
 				display: block;
-				margin: 20px 0;
+				@media (max-width: $screen-sm-max) and (orientation: portrait) {
+					margin: 0 20px;
+				}
+				@media (max-width: $screen-sm-max) and (orientation: landscape) {
+					margin: 10px 0;
+				}
+				@media (min-width: $screen-md-min) {
+					margin: 20px 0;
+				}
 
 				img {
 					display: block;
