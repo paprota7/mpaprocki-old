@@ -1,0 +1,122 @@
+// =========== General button styles & variables =======================================//
+
+button {
+	display: block;
+	border: none;
+	background: none;
+
+	span {
+		display: block;
+	}
+}
+$transition: 0.3s;
+$button-size: 2.5rem;
+
+.lines-button {
+	transition: 0.3s;
+	cursor: pointer;
+	user-select: none;
+	border-radius: $button-size/7;
+	@media (max-width: $screen-xs-max) {
+		padding: 11px;
+	}
+	@media (min-width: $screen-sm-min) {
+		padding: 18px;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&:active {
+		transition: 0;
+	}
+}
+//common to all three-liners
+@mixin line {
+	display: inline-block;
+	background: $c-red;
+	transition: $transition;
+	@media (max-width: $screen-xs-max) {
+		width: 35px;
+		height: 2px;
+	}
+	@media (min-width: $screen-sm-min) {
+		width: 40px;
+		height: 3px;
+	}
+}
+//common to all three-liners
+
+.lines {
+	@include line;
+	position: relative;
+
+	&:after,
+	&:before {
+		@include line;
+		position: absolute;
+		left: 0;
+		content: '';
+		-webkit-transform-origin: $button-size/14 center;
+		transform-origin: $button-size/14 center;
+	}
+
+	&:before {
+		top: $button-size/4;
+	}
+
+	&:after {
+		top: -$button-size/4;
+	}
+}
+
+.lines-button.close {
+	-webkit-transform: scale3d(.8,.8,.8);
+	transform: scale3d(.8,.8,.8);
+}
+
+.lines-button.x2 {
+	.lines {
+		transition: background 0.3s 0.5s ease;
+
+		&:after,
+		&:before {
+			//set transform origin
+			-webkit-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			transition: top 0.3s 0.6s ease, -webkit-transform 0.3s ease;
+			transition: top 0.3s 0.6s ease, transform 0.3s ease;
+		}
+	}
+}
+
+.lines-button.x2.close {
+	.lines {
+		transition: background 0.3s 0s ease;
+		background: transparent;
+
+		&:after,
+		&:before {
+			transition: top 0.3s ease, -webkit-transform 0.3s 0.5s ease; //delay the formation of the x till the minus is formed
+			transition: top 0.3s ease, transform 0.3s 0.5s ease; //delay the formation of the x till the minus is formed
+			top: 0;
+			@media (max-width: $screen-xs-max) {
+				width: 35px;
+			}
+			@media (min-width: $screen-sm-min) {
+				width: 40px;
+			}
+		}
+
+		&:before {
+			-webkit-transform: rotate3d(0,0,1,45deg);
+			transform: rotate3d(0,0,1,45deg);
+		}
+
+		&:after {
+			-webkit-transform: rotate3d(0,0,1,-45deg);
+			transform: rotate3d(0,0,1,-45deg);
+		}
+	}
+}

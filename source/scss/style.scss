@@ -3,6 +3,7 @@
 // =========================
 @import "vendor/_bootstrap";
 @import "vendor/_slick";
+@import "vendor/_animate";
 
 // Sprites
 // =========================
@@ -20,9 +21,12 @@
 @import "elements/_slick-theme";
 @import "elements/_slider";
 @import "elements/_socials";
+@import "elements/_popup";
+@import "elements/_scroll-top";
 
 
 // sections
 // =========================
 @import "sections/_hero";
 @import "sections/_about";
+@import "sections/_services";

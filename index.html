@@ -38,17 +38,15 @@
 							<img src="./images/icon-red.svg" alt="Mpaprocki" class="header__logo__img header__logo__img--mobile">
 							<img src="./images/logo.svg" alt="Mpaprocki" class="header__logo__img header__logo__img--normal">
 						</a>
-						<a href="#" class="header__toggle">
-							<span class="bar"></span>
-							<span class="bar"></span>
-							<span class="bar"></span>
-						</a>
+						<button class="header__toggle lines-button x2" type="button" role="button" aria-label="Toggle Navigation">
+							<span class="lines"></span>
+						</button>
 						<nav class="navigation">
 							<ul class="navigation__menu">
 								<li><a href="#">Główna</a></li>
 								<li><a href="#">O mnie</a></li>
-								<li><a href="#">Portfolio</a></li>
 								<li><a href="#">Oferta</a></li>
+								<li><a href="#">Portfolio</a></li>
 								<li><a href="#">Kontakt</a></li>
 							</ul>
 						</nav>
@@ -67,10 +65,13 @@
 							<img src="./images/arrow.svg" alt="Next">
 						</button>
 						<div class="slider__right">
-							<div class="slider__slide" data-slide-title="Web Design" data-slide-text="Tworzenie stron WWW" data-slide-anchor="#">
+							<div class="slider__slide" data-slide-title="Web Design" data-slide-text="Projektowanie interfejsów" data-slide-anchor="#">
 								<img src="./images/slides/design-right.jpg" alt="Web Developer">
 							</div>
-							<div class="slider__slide" data-slide-title="Front-End Developer" data-slide-text="Tworzenie części frontendowej dla stron i serwisów WWW" data-slide-anchor="#">
+							<div class="slider__slide" data-slide-title="Front-End" data-slide-text="Kodowanie stron i aplikacji" data-slide-anchor="#">
+								<img src="./images/slides/frontend-right.jpg" alt="Front End">
+							</div>
+							<div class="slider__slide" data-slide-title="E-Commerce" data-slide-text="Tworzenie sklepów internetowych" data-slide-anchor="#">
 								<img src="./images/slides/frontend-right.jpg" alt="Front End">
 							</div>
 						</div>
@@ -98,20 +99,364 @@
 	<section class="about">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5">
+				<div class="col-xs-12">
 					<img src="./images/profile.jpg" alt="Profile" class="about__photo">
+				</div>
+				<div class="col-xs-12">
+					<p class="about__text">
+						Od ponad 3 lat zajmuje się <strong>tworzeniem stron www </strong>i <strong>aplikacji internetowych</strong> oraz ich projektowaniem. Aktualnie współpracuję z firmą zajmująca się <strong>E-Commercem</strong> realizując projekty sklepów internetowych
+						opartych na <strong>Magento</strong> dla nich oraz ich klientów. Prócz tego wykonuje pojedyńcze prywatne projekty dla kilku innych firm poczynając od prostych stron internetowych typu wizytówki przez blogi oparte na <strong>frameworku wordpress</strong>						po <strong>dedykowane systemy cms</strong>.
+					</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
+	<section class="services">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2 class="services__title">Czym się zajmuje?</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="services__box" data-popup="true" data-popup-target="#webdesign">
+						<img src="./images/click.svg" class="services__box__click animated bounceIn" alt="Click">
+						<img src="./images/services/design.svg" class="services__box__logo" alt="Web Design">
+						<h3 class="services__box__title">Web Design</h3>
+						<p class="services__box__text">
+							Podoążając za najnowszymi trendami projektuje strony by wpisywały się w najświerzsze trendy panujące na rynku a jednocześnie nie były sztampowe.
+						</p>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="services__box" data-popup="true" data-popup-target="#frontend">
+						<img src="./images/click.svg" class="services__box__click animated bounceIn" alt="Click">
+						<img src="./images/services/frontend.svg" class="services__box__logo" alt="Front-end">
+						<h3 class="services__box__title">Front-End</h3>
+						<p class="services__box__text">
+							Jako Front-end developer posiadam największe doświadczenie a wysoka jakość kodu jest u mnie priorytetem.
+						</p>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="services__box" data-popup="true" data-popup-target="#cms">
+						<img src="./images/click.svg" class="services__box__click animated bounceIn" alt="Click">
+						<img src="./images/services/cms.svg" class="services__box__logo" alt="CMS">
+						<h3 class="services__box__title">CMS</h3>
+						<p class="services__box__text">
+							CMS daje możliwość zarządzania treścią na naszej stronie i w zależności od potrzeb, implementuję już gotowe CMS'y lub piszę autorskie.
+						</p>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<a href="" class="services__box" data-popup="true" data-popup-target="#ecommerce">
+						<img src="./images/click.svg" class="services__box__click animated bounceIn" alt="Click">
+						<img src="./images/services/ecommerce.svg" class="services__box__logo" alt="E-Commerce">
+						<h3 class="services__box__title">E-Commerce</h3>
+						<p class="services__box__text">
+							Każdy spodziewa się, że będzie mógł dokonywać zakupów online. Jeśli witryna nie oferuje tej funkcji lub jest przestarzała i powolna, tracisz sprzedaż.
+						</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<dialog id="webdesign" class="popup">
+		<div class="popup__top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h2>Web Design</h2>
+						<h3>Projektowanie twojej strony</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<svg class="popup__shadow" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 100 100" preserveaspectratio="none">
+			<path class="shadow-path-1" d="M0 0 L50 100 L100 0 Z" />
+			<path class="shadow-path-2" d="M50 100 L100 40 L100 0 Z" />
+		</svg>
+		<div class="popup__content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<img src="./images/direction.svg" alt="Direction">
+						<h4>Cel projektu</h4>
+						<p>
+							Projektowanie wyglądu strony to nie tylko wizualny język używany do zilustrowania witryny, ale również definiuje ogólne wrażenia użytkowników z marką. Ściśle współpracując z klientami staram się, aby moje projekty naprawdę reprezentowały Swoją wizualną
+							tożsamość. Ustalenie właściwego tonu i estetyki dla Twojej strony jest ważną miarą sukcesu w ogólnym projekcie.
+						</p>
+					</div>
+					<div class="col-md-6">
+						<img src="./images/optimalization.svg" alt="Optimalization">
+						<h4>Optymalizacja strony</h4>
+						<p>
+							Spójność pomiędzy urządzeniami desktopowymi a mobilnymi, wskazówki dotyczące marki, odstępy, typografia i biblioteki wzorów pomagają stworzyć czysty wygląd witryny. Zbyt duża złożoność strony internetowej powoduje zbyt duże zamieszanie i co zmiejsza atrakcyjnośc
+							naszej witryny. Aby zapewnić, optymalność naszej strony przechodzimy przez szereg koncepcji, wykorzystując ten, który będzie odpowiadał nam najbardziej i spełni nasze oczekiwania.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<h4 class="red">UI &amp; UX</h4>
+						<p class="space-bottom">
+							Już na samym początku projektowania witryny trzeba się upewnić, że użytkownik jest w stanie skutecznie uzyskać informacje, które chce uzyskać z Twojej witryny. Jeśli nie, to nie mają powodu, aby wrócić. W tym celu uwzględniono metodologię projektowania
+							interfejsu użytkownika (UI) i użytkownika (UX).
+						</p>
+					</div>
+					<div class="col-md-3">
+						<img src="./images/wireframe.svg" alt="Wireframe" class="small">
+						<p class="space-bottom">Szkielet projektu</p>
+					</div>
+					<div class="col-md-3">
+						<img src="./images/hierarchy.svg" alt="Hierarchy" class="small">
+						<p class="space-bottom">Wyraźna hierarchia</p>
+					</div>
+					<div class="col-md-3">
+						<img src="./images/clicking.svg" alt="Clicks" class="small">
+						<p class="space-bottom">Redukcja kliknięć</p>
+					</div>
+					<div class="col-md-3">
+						<img src="./images/time.svg" alt="Time" class="small">
+						<p class="space-bottom">Kierunek i czas</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<h4>Technologie i metodologie Web Designu</h4>
+					</div>
+					<div class="col-xs-12">
+						<ul class="popup__technologies">
+							<li>Web/Print Design</li>
+							<li>Visual Branding</li>
+							<li>UX/UI</li>
+							<li>Mobile Design</li>
+							<li>PhotoShop</li>
+							<li>Adobe Illustrator</li>
+							<li>Responsive Design</li>
+							<li>Mail Design</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</dialog>
+
+	<dialog id="frontend" class="popup">
+		<div class="popup__top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h2>Front-End</h2>
+						<h3>Wizualna cześć strony internetowej</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<svg class="popup__shadow" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 100 100" preserveaspectratio="none">
+			<path class="shadow-path-1" d="M0 0 L50 100 L100 0 Z" />
+			<path class="shadow-path-2" d="M50 100 L100 40 L100 0 Z" />
+		</svg>
+		<div class="popup__content">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<img src="./images/binoculars.svg" alt="Binoculars">
+						<h4>W poszukiwaniu świerzości</h4>
+						<p>
+							Front-end to jeden z najszybciej rozwijających się i zmieniających aspektów sieci i urządzeń przenośnych. W końcu staramy się dostosować, aby być dobrym, starszym standardem we współczesnym świecie. To spowodowało ogromną zmianę, która wciąż rośnie.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<h4 class="red">Front-end po Mojemu</h4>
+						<p class="space-bottom">
+							Front-end jest dla mnie początkowym procesem tworzenia naszej strony internetowej zaraz po designie. W swojeje pracy operuje w trzema podstawowymi technologiami. Są nimi:
+						</p>
+					</div>
+					<div class="col-md-2 col-md-offset-3">
+						<img src="./images/html5.svg" alt="HTML 5">
+						<p class="space-bottom">Idealny markup z HTML 5</p>
+					</div>
+					<div class="col-md-2">
+						<img src="./images/css3.svg" alt="CSS 3">
+						<p class="space-bottom">Estetyczne sytle w CSS 3</p>
+					</div>
+					<div class="col-md-2">
+						<img src="./images/js.svg" alt="JavaScript">
+						<p class="space-bottom">Dynamiczne interakcje w JavaScript</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-7">
+						<h4 class="text-left">Korzystanie z nowych technologii w celu usprawnienia witryny</h4>
+						<p class="text-left large">
+							W dawnych czasach (około roku 2012) powszechnym było mieć CSSy w różnych plikach, tak samo w przypadku języka JavaScript. Przykłądowo twoje główne kolory zostały określone w 100 różnych miejscach w stylach. Co w przypadku gdy trzeba je zmienić? Taka prosta rzecz, jak zmiana koloru, ma szacunkową liczbę godzin, a powinno potrwać no najwyżej 5 minut. Na szczęście opracowano narzędzia, które pomagają złagodzić ten ból. Korzystam z wypróbowanej praktyki i stosuj się do zestawu standardów, aby zmiany były łatwe i szybkie. Wszystko to staram sie wykrzystywac w procesie tworzenie części front-endowej, dzieki czemu kod jest spójny, udokumentowany i skuteczny. Pozwala mi to skoncentrować się na potrzebach klientów i nie walczyć z technologią.
+						</p>
+					</div>
+					<div class="col-md-4 col-md-offset-1">
+						<div class="row">
+							<div class="col-xs-12">
+								<img src="./images/sass-less.svg" class="large" alt="SASS &amp; LESS">
+								<p>
+									Narzedzie ułatwiajce pisanie styli w CSS
+								</p>
+							</div>
+							<div class="col-xs-12">
+								<img src="./images/grunt-gulp.svg" class="large" alt="Grunt &amp; Gulp">
+								<p>
+									Procesy tworzenia przy użyciu Gulp lub Grunt umożliwiają nam powtarzalne wykonywanie czynności
+								</p>
+							</div>
+							<div class="col-xs-12">
+								<img src="./images/npm-bower.svg" class="large" alt="NPM &amp; Bower">
+								<p>
+									Uglify, browserfy, image-min, concat, i wiele innych narzędzi automatyzujących proces, które kiedyś robiono ręcznie
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<img src="./images/performance.svg" alt="Performance">
+						<h4>Wydajność</h4>
+					</div>
+					<div class="col-xs-12">
+						<p>
+							Kodując naszą stronę bardzo ważnym aspektem jest szybkość ładowania sie witryny. Tyczy się to głównie wersji mobilnych, więc już na etapie projektowania musimy wziąść pod uwagę, że nasza strona musi być lekka, a wersja mobilna dopracowana. W innym przypadku ucierpimy na tym w rankingu wyników wyszukiwania w wyszukiwarkach takich jak np.: Google. Użytkownicy oczekują by twoja strona szybko odpowiadała, a niestandardowe czcionki, olbrzymie strony i obrazy czy blokwanie JavaScriptu jest niekorzystne dla wydajności. Osobiście staram sie przebrnąć przez te wszystkie wyzwania. Wiem, czego potrzeba, aby stworzyć dobrą stronę.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<h4>Technologie i metodologie Front-Endu</h4>
+					</div>
+					<div class="col-xs-12">
+						<ul class="popup__technologies">
+							<li>HTML5</li>
+							<li>CSS3</li>
+							<li>Less</li>
+							<li>Grunt</li>
+							<li>Gulp</li>
+							<li>RWD</li>
+							<li>BEM</li>
+							<li>JavaScript/jQuery</li>
+							<li>Frameworki CSS</li>
+							<li>Biblioteki Javascript</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</dialog>
+
+	<dialog id="cms" class="popup">
+		<div class="popup__top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h2>CMS</h2>
+						<h3>System zarządzania treścią</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<svg class="popup__shadow" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 100 100" preserveaspectratio="none">
+			<path class="shadow-path-1" d="M0 0 L50 100 L100 0 Z" />
+			<path class="shadow-path-2" d="M50 100 L100 40 L100 0 Z" />
+		</svg>
+		<div class="popup__content">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
+						<img src="./images/php.svg" alt="PHP">
+						<p class="space-bottom">Dedykowane systemy CMS w PHP.</p>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<img src="./images/wordpress.svg" alt="WordPress">
+						<p class="space-bottom">Aż 25% stron używa tego CMS'a. Idealny dla blogów, świetny jako CMS na poziomie początkowym, gdzie nie potrzebujesz wsparcia lub funkcji innych systemów.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<h4>Technologie i metodologie CMS</h4>
+					</div>
+					<div class="col-xs-12">
+						<ul class="popup__technologies">
+							<li>Laravel</li>
+							<li>PHP</li>
+							<li>Word Press</li>
+							<li>Integracje</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</dialog>
+
+	<dialog id="ecommerce" class="popup">
+		<div class="popup__top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h2>E-Commerce</h2>
+						<h3>Sklepy internetowe</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<svg class="popup__shadow" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 100 100" preserveaspectratio="none">
+			<path class="shadow-path-1" d="M0 0 L50 100 L100 0 Z" />
+			<path class="shadow-path-2" d="M50 100 L100 40 L100 0 Z" />
+		</svg>
+		<div class="popup__content">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-sm-offset-2 col-md-4 col-md-offset-4">
+						<img src="./images/magento.svg" alt="Magento">
+						<p class="space-bottom">
+							Autonomiczna platforma handlowa oparta na PHP. Dziś jest to jedna z najszybciej rozwijających się i szeroko stosowanych platform e-commerce.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<img src="./images/increasing.svg" alt="Increasing">
+						<h4>Zwiększenie sprzedaży</h4>
+					</div>
+					<div class="col-xs-12">
+						<p>
+							Nastały takie czasy, że każdy spodziewa się możliwości dokonywania zakupów online. Jeśli witryna nie oferuje tej funkcji lub jest przestarzała i powolna, tracisz sprzedaż. Duże zdjęcia i wygodne zamawianie jest dobrym kierunkiem handlu elektronicznego. Nie pozwól swojej firmie zostać w tyle.
+						</p>
+						<p>
+							Jeśli taki obraz sprzedaży Cię nie przekona, to w 2015 roku e-handel wzrósł o 20% w stosunku do roku poprzedniego, podczas gdy tradycyjna sprzedaż detaliczna była niższa. Więcej osób kupowało przez internet w "Cyber ​​Monday" niż w sklepach stacjonarnych na "Black Friday".
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</dialog>
+
 	<aside class="socials">
 		<ul class="socials__menu">
-			<li><a href="#"><img src="./images/icon-facebook.svg" alt="Facebook"></a></li>
-			<li><a href="#"><img src="./images/icon-twitter.svg" alt="Twitter"></a></li>
-			<li><a href="#"><img src="./images/icon-github.svg" alt="Github"></a></li>
+			<li>
+				<a href="#"><img src="./images/icon-facebook.svg" alt="Facebook"></a>
+			</li>
+			<li>
+				<a href="#"><img src="./images/icon-twitter.svg" alt="Twitter"></a>
+			</li>
+			<li>
+				<a href="#"><img src="./images/icon-github.svg" alt="Github"></a>
+			</li>
 		</ul>
 	</aside>
+
+	<a href="#" class="scroll-top">Scroll To Top</a>
 
 	<script src="./js/scripts.js"></script>
 

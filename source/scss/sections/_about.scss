@@ -3,6 +3,26 @@
 
 	&__photo {
 		display: block;
-		max-width: 100%;
+		width: 100%;
+		margin: 0 auto;
+		max-width: 440px;
+
+		&:after {
+
+		}
+	}
+
+	&__text {
+		max-width: 800px;
+		text-align: center;
+		font-size: 16px;
+		line-height: 1.8;
+		font-weight: 400;
+		margin: 50px auto 20px;
+
+		strong {
+			font-weight: 500;
+			color: $c-red;
+		}
 	}
 }

@@ -62,31 +62,8 @@
 	&__toggle {
 		display: block;
 		float: right;
-		@media (max-width: $screen-xs-max) {
-			padding: 12px;
-		}
-		@media (min-width: $screen-sm-min) {
-			padding: 18px;
-		}
 		@media (min-width: $screen-md-min) {
 			display: none;
-		}
-
-		.bar {
-			display: block;
-			background-color: $c-red;
-			@media (max-width: $screen-xs-max) {
-				width: 35px;
-				height: 2px;
-			}
-			@media (min-width: $screen-sm-min) {
-				width: 40px;
-				height: 3px;
-			}
-
-			&+ .bar {
-				margin-top: 10px;
-			}
 		}
 	}
 
