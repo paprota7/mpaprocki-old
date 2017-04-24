@@ -1,24 +1,41 @@
 .scroll-top {
 	position: fixed;
-	bottom: 35px;
-	right: 35px;
 	font-size: 0;
 	display: none;
-	padding: 15px;
 	background-color: $c-red;
-	transition: background-color 0.3s, transform 0.3s;
+	@media (min-width: $screen-md-min) {
+		transition: background-color 0.3s, transform 0.3s;
+	}
+	@media (min-width: $screen-sm-min) {
+		bottom: 35px;
+		right: 35px;
+		padding: 15px;
+	}
+	@media (max-width: $screen-xs-max) {
+		bottom: 20px;
+		right: 20px;
+		padding: 12px;
+	}
 
 	&:hover {
-		background-color: $c-black;
-		transform: scale(1.05);
+		@media (min-width: $screen-md-min) {
+			background-color: $c-black;
+			transform: scale(1.05);
+		}
 	}
 
 	&:before {
 		content: '';
 		display: block;
-		width: 30px;
-		height: 30px;
 		transform: rotate(-90deg);
 		background-image: url('../images/arrow.svg');
+		@media (min-width: $screen-sm-min) {
+			width: 30px;
+			height: 30px;
+		}
+		@media (max-width: $screen-xs-max) {
+			width: 20px;
+			height: 20px;
+		}
 	}
 }

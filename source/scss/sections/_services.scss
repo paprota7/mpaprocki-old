@@ -1,52 +1,65 @@
 .services {
-
-	padding: 80px 0;
+	@media (min-width: $screen-sm-min) {
+		padding: 80px 0;
+	}
+	@media (max-width: $screen-xs-max) {
+		padding: 10px 0;
+	}
 
 	&__title {
-		font-size: 48px;
 		text-align: center;
 		font-weight: 400;
+		@media (min-width: $screen-sm-min) {
+			font-size: 48px;
+		}
+		@media (max-width: $screen-xs-max) {
+			font-size: 28px;
+		}
 	}
 
 	&__box {
 		$this: &;
 		text-align: center;
 		display: block;
-		float: left;
 		position: relative;
 		text-decoration: none;
 		transition: all 0.3s linear;
 		@include clearfix;
+
+		@media (min-width: $screen-sm-min) {
+			float: left;
+		}
+
 		&:hover {
-			background-color: rgba(228, 66, 63, 0.1);
+			@media (min-width: $screen-md-min) {
+				background-color: rgba(228, 66, 63, 0.1);
+			}
 			#{$this}__logo {
-				transform: scale(1.05);
+				@media (min-width: $screen-md-min) {
+					transform: scale(1.05);
+				}
 			}
 
 			#{$this}__title {
 				&:after {
-					width: 110%;
+					@media (min-width: $screen-md-min) {
+						width: 110%;
+					}
 				}
 			}
-
-			#{$this}__click {
-				display: block;
-			}
-		}
-
-		&__click {
-			display: none;
-			width: 25px;
-			position: absolute;
-			right: 30px;
-			top: 30px;
 		}
 
 		&__logo {
 			display: block;
-			width: 80px;
 			transition: all 0.3s linear;
-			margin: 40px auto 30px;
+			@media (min-width: $screen-sm-min) {
+				width: 80px;
+				margin: 40px auto 30px;
+			}
+			@media (max-width: $screen-xs-max) {
+				width: 60px;
+				margin: 10px auto 5px;
+			}
 		}
 
 		&__title {
@@ -55,31 +68,47 @@
 			position: relative;
 			display: inline-block;
 			text-transform: uppercase;
-			font-size: 16px;
-			margin: 10px 0 10px;
 			color: $c-black;
+			@media (min-width: $screen-sm-min) {
+				font-size: 16px;
+				margin: 10px 0 10px;
+			}
+			@media (max-width: $screen-xs-max) {
+				font-size: 14px;
+    			margin: 5px 0 5px;
+			}
 
 			&:after {
-				position: absolute;
-				content: '';
-				bottom: -2px;
-				left: 50%;
-				height: 2px;
-				width: 0;
-				background-color: $c-red;
-				display: block;
-				transform: translateX(-50%);
-				transition: all 0.2s linear;
+				@media (min-width: $screen-md-min) {
+					position: absolute;
+					content: '';
+					bottom: -2px;
+					left: 50%;
+					height: 2px;
+					width: 0;
+					background-color: $c-red;
+					display: block;
+					transform: translateX(-50%);
+					transition: all 0.2s linear;
+				}
 			}
 		}
 
 		&__text {
-			font-size: 14px;
 			text-align: center;
 			color: $c-black;
 			font-weight: 400;
-			margin: 10px 0 35px;
-			min-height: 80px;
+			@media (min-width: $screen-sm-min) {
+				font-size: 14px;
+				margin: 10px 0 35px;
+				min-height: 80px;
+			}
+			@media (max-width: $screen-xs-max) {
+				font-size: 10px;
+				margin: 5px auto 10px;
+				min-height: 100px;
+				max-width: 190px;
+			}
 		}
 	}
 
