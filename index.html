@@ -20,7 +20,6 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<!-- Styles -->
-	<link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<link rel="stylesheet" href="./css/style.css" />
 
 	<title>Michał Paprocki</title>
@@ -43,11 +42,10 @@
 						</button>
 						<nav class="navigation">
 							<ul class="navigation__menu">
-								<li><a href="#">Główna</a></li>
-								<li><a href="#">O mnie</a></li>
-								<li><a href="#">Oferta</a></li>
-								<li><a href="#">Portfolio</a></li>
-								<li><a href="#">Kontakt</a></li>
+								<li><a href="#about" class="anchor-link">O mnie</a></li>
+								<li><a href="#services" class="anchor-link">Oferta</a></li>
+								<li><a href="#portfolio" class="anchor-link">Portfolio</a></li>
+								<li><a href="#contact" class="anchor-link">Kontakt</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -69,9 +67,6 @@
 								<img src="./images/slides/design-right.jpg" alt="Web Developer">
 							</div>
 							<div class="slider__slide" data-slide-title="Front-End" data-slide-text="Kodowanie stron i aplikacji" data-slide-anchor="#">
-								<img src="./images/slides/frontend-right.jpg" alt="Front End">
-							</div>
-							<div class="slider__slide" data-slide-title="E-Commerce" data-slide-text="Tworzenie sklepów internetowych" data-slide-anchor="#">
 								<img src="./images/slides/frontend-right.jpg" alt="Front End">
 							</div>
 						</div>
@@ -96,7 +91,7 @@
 		</div>
 	</section>
 
-	<section class="about">
+	<section class="about" id="about">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -112,53 +107,173 @@
 		</div>
 	</section>
 
-	<section class="services">
+	<section class="services" id="services">
+		<div class="titles-box">
+			<h2 class="services__title">Czym sie zajmuje</h2>
+		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12">
-					<h2 class="services__title">Czym się zajmuje?</h2>
+				<div class="col-xs-12 col-md-6">
+					<div class="row">
+						<div class="col-xs-6">
+							<a href="#" class="services__box" data-popup="true" data-popup-target="#webdesign">
+								<img src="./images/services/design.svg" class="services__box__logo" alt="Web Design">
+								<h3 class="services__box__title">Web Design</h3>
+								<p class="services__box__text">
+									Podoążając za najnowszymi trendami projektuje strony by wpisywały się w najświerzsze trendy panujące na rynku a jednocześnie nie były sztampowe.
+								</p>
+								<button name="button" class="button button--red"><span>Więcej...</span></button>
+							</a>
+						</div>
+						<div class="col-xs-6">
+							<a href="#" class="services__box" data-popup="true" data-popup-target="#frontend">
+								<img src="./images/services/frontend.svg" class="services__box__logo" alt="Front-end">
+								<h3 class="services__box__title">Front-End</h3>
+								<p class="services__box__text">
+									Jako Front-end developer posiadam największe doświadczenie a wysoka jakość kodu jest u mnie priorytetem.
+								</p>
+								<button name="button" class="button button--red"><span>Więcej...</span></button>
+							</a>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3 col-xs-6">
-					<a href="#" class="services__box" data-popup="true" data-popup-target="#webdesign">
-						<img src="./images/services/design.svg" class="services__box__logo" alt="Web Design">
-						<h3 class="services__box__title">Web Design</h3>
-						<p class="services__box__text">
-							Podoążając za najnowszymi trendami projektuje strony by wpisywały się w najświerzsze trendy panujące na rynku a jednocześnie nie były sztampowe.
-						</p>
-					</a>
-				</div>
-				<div class="col-md-3 col-xs-6">
-					<a href="#" class="services__box" data-popup="true" data-popup-target="#frontend">
-						<img src="./images/services/frontend.svg" class="services__box__logo" alt="Front-end">
-						<h3 class="services__box__title">Front-End</h3>
-						<p class="services__box__text">
-							Jako Front-end developer posiadam największe doświadczenie a wysoka jakość kodu jest u mnie priorytetem.
-						</p>
-					</a>
-				</div>
-				<div class="col-md-3 col-xs-6">
-					<a href="#" class="services__box" data-popup="true" data-popup-target="#cms">
-						<img src="./images/services/cms.svg" class="services__box__logo" alt="CMS">
-						<h3 class="services__box__title">CMS</h3>
-						<p class="services__box__text">
-							CMS daje możliwość zarządzania treścią na naszej stronie i w zależności od potrzeb, implementuję już gotowe CMS'y lub piszę autorskie.
-						</p>
-					</a>
-				</div>
-				<div class="col-md-3 col-xs-6">
-					<a href="" class="services__box" data-popup="true" data-popup-target="#ecommerce">
-						<img src="./images/services/ecommerce.svg" class="services__box__logo" alt="E-Commerce">
-						<h3 class="services__box__title">E-Commerce</h3>
-						<p class="services__box__text">
-							Każdy spodziewa się, że będzie mógł dokonywać zakupów online. Jeśli witryna nie oferuje tej funkcji lub jest przestarzała i powolna, tracisz sprzedaż.
-						</p>
-					</a>
+				<div class="col-xs-12 col-md-6">
+					<div class="row">
+						<div class="col-xs-6">
+							<a href="#" class="services__box" data-popup="true" data-popup-target="#cms">
+								<img src="./images/services/cms.svg" class="services__box__logo" alt="CMS">
+								<h3 class="services__box__title">CMS</h3>
+								<p class="services__box__text">
+									CMS daje możliwość zarządzania treścią na naszej stronie i w zależności od potrzeb, implementuję już gotowe CMS'y lub piszę autorskie.
+								</p>
+								<button name="button" class="button button--red"><span>Więcej...</span></button>
+							</a>
+						</div>
+						<div class="col-xs-6">
+							<a href="" class="services__box" data-popup="true" data-popup-target="#ecommerce">
+								<img src="./images/services/ecommerce.svg" class="services__box__logo" alt="E-Commerce">
+								<h3 class="services__box__title">E-Commerce</h3>
+								<p class="services__box__text">
+									Każdy spodziewa się, że będzie mógł dokonywać zakupów online. Jeśli witryna nie oferuje tej funkcji lub jest przestarzała i powolna, tracisz sprzedaż.
+								</p>
+								<button name="button" class="button button--red"><span>Więcej...</span></button>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<section class="portfolio" id="portfolio">
+		<div class="titles-box">
+			<h2 class="portfolio__title">Portfolio</h2>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-xs-12">
+					<a href="#" class="portfolio__box">
+						<div class="portfolio__image-wrapper">
+							<img src="./images/portfolio/msm.jpg" class="portfolio__image" alt="Mobilne Studio Makijażu">
+						</div>
+						<p class="portfolio__caption">Mobilne Studio Makijażu</p>
+					</a>
+				</div>
+				<div class="col-sm-6 col-xs-12">
+					<a href="#" class="portfolio__box">
+						<div class="portfolio__image-wrapper">
+							<img src="./images/portfolio/mpaprocki.jpg" class="portfolio__image" alt="MPaprocki">
+						</div>
+						<p class="portfolio__caption">MPaprocki</p>
+					</a>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+					<button name="button" class="button button--red button--large"><span>Więcej projektów wkrótce...</span></button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="contact" id="contact">
+		<div class="titles-box">
+			<h2 class="contact__title">Kontakt</h2>
+			<!-- <p>
+				Masz pytania, lub chcesz nawiązać ze mną współpracę?<br>
+				Skontaktuj się ze mna przez maila: <a href="mailto:kontakt@mpaprocki.net">kontakt@mpaprocki.net</a>
+			</p>
+			<p>lub przez formularz kontaktowy</p> -->
+		</div>
+		<div class="container">
+			<div class="row">
+
+			</div>
+			<form action="#" class="form form--validate">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="form__box">
+							<label for="name" class="form__label">Pełne imię</label>
+							<input type="text" name="name" id="name" class="form__input form__input--required">
+							<span class="form__required-message animated bounceInRight">
+								*Musisz uzupełnić to pole!
+							</span>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form__box">
+							<label for="email" class="form__label">E-Mail</label>
+							<input type="email" name="email" id="email" class="form__input form__input--required">
+							<span class="form__required-message animated bounceInRight">
+								*Musisz uzupełnić to pole!
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form__box">
+							<label for="message" class="form__label">Wiadomość...</label>
+							<textarea name="message" id="message" maxlength="5000" class="form__textarea form__textarea--required"></textarea>
+							<span class="form__required-message animated bounceInRight">
+								*Musisz uzupełnić to pole!
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-6">
+						<div class="form__box form__box--captcha">
+							<div id="recaptcha" class="form__captcha form__captcha--required"></div>
+							<span class="form__required-message animated bounceInRight">
+								*Musisz uzupełnić to pole!
+							</span>
+						</div>
+						<button type="submit" id="submit" name="button" class="button button--red button--large"><span>Wyślij</span></button>
+						<p class="form__response">Twoja widomość została wysłana</p>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<p class="footer__copyright">Copyright 2017 Michał Paprocki. Wszelkie prawa zastrzeżone.</p>
+				</div>
+				<div class="col-md-6">
+					<nav class="footer__navigation">
+						<ul class="footer__menu">
+							<li><a href="#about" class="anchor-link">O mnie</a></li>
+							<li><a href="#services" class="anchor-link">Oferta</a></li>
+							<li><a href="#portfolio" class="anchor-link">Portfolio</a></li>
+							<li><a href="#contact" class="anchor-link">Kontakt</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 	<dialog id="webdesign" class="popup">
 		<div class="popup__top">
@@ -178,7 +293,7 @@
 		<div class="popup__content">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-sm-6">
 						<img src="./images/direction.svg" alt="Direction">
 						<h4>Cel projektu</h4>
 						<p>
@@ -186,7 +301,7 @@
 							tożsamość. Ustalenie właściwego tonu i estetyki dla Twojej strony jest ważną miarą sukcesu w ogólnym projekcie.
 						</p>
 					</div>
-					<div class="col-md-6">
+					<div class="col-sm-6">
 						<img src="./images/optimalization.svg" alt="Optimalization">
 						<h4>Optymalizacja strony</h4>
 						<p>
@@ -203,19 +318,19 @@
 							interfejsu użytkownika (UI) i użytkownika (UX).
 						</p>
 					</div>
-					<div class="col-md-3">
+					<div class="col-xs-6 col-sm-3">
 						<img src="./images/wireframe.svg" alt="Wireframe" class="small">
 						<p class="space-bottom">Szkielet projektu</p>
 					</div>
-					<div class="col-md-3">
+					<div class="col-xs-6 col-sm-3">
 						<img src="./images/hierarchy.svg" alt="Hierarchy" class="small">
 						<p class="space-bottom">Wyraźna hierarchia</p>
 					</div>
-					<div class="col-md-3">
+					<div class="col-xs-6 col-sm-3">
 						<img src="./images/clicking.svg" alt="Clicks" class="small">
 						<p class="space-bottom">Redukcja kliknięć</p>
 					</div>
-					<div class="col-md-3">
+					<div class="col-xs-6 col-sm-3">
 						<img src="./images/time.svg" alt="Time" class="small">
 						<p class="space-bottom">Kierunek i czas</p>
 					</div>
@@ -274,27 +389,29 @@
 							Front-end jest dla mnie początkowym procesem tworzenia naszej strony internetowej zaraz po designie. W swojeje pracy operuje w trzema podstawowymi technologiami. Są nimi:
 						</p>
 					</div>
-					<div class="col-md-2 col-md-offset-3">
+					<div class="col-xs-4 col-md-2 col-md-offset-3">
 						<img src="./images/html5.svg" alt="HTML 5">
 						<p class="space-bottom">Idealny markup z HTML 5</p>
 					</div>
-					<div class="col-md-2">
+					<div class="col-xs-4 col-md-2">
 						<img src="./images/css3.svg" alt="CSS 3">
 						<p class="space-bottom">Estetyczne sytle w CSS 3</p>
 					</div>
-					<div class="col-md-2">
+					<div class="col-xs-4 col-md-2">
 						<img src="./images/js.svg" alt="JavaScript">
 						<p class="space-bottom">Dynamiczne interakcje w JavaScript</p>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-7">
+					<div class="col-sm-8 col-md-7">
 						<h4 class="text-left">Korzystanie z nowych technologii w celu usprawnienia witryny</h4>
 						<p class="text-left large">
-							W dawnych czasach (około roku 2012) powszechnym było mieć CSSy w różnych plikach, tak samo w przypadku języka JavaScript. Przykłądowo twoje główne kolory zostały określone w 100 różnych miejscach w stylach. Co w przypadku gdy trzeba je zmienić? Taka prosta rzecz, jak zmiana koloru, ma szacunkową liczbę godzin, a powinno potrwać no najwyżej 5 minut. Na szczęście opracowano narzędzia, które pomagają złagodzić ten ból. Korzystam z wypróbowanej praktyki i stosuj się do zestawu standardów, aby zmiany były łatwe i szybkie. Wszystko to staram sie wykrzystywac w procesie tworzenie części front-endowej, dzieki czemu kod jest spójny, udokumentowany i skuteczny. Pozwala mi to skoncentrować się na potrzebach klientów i nie walczyć z technologią.
+							W dawnych czasach (około roku 2012) powszechnym było mieć CSSy w różnych plikach, tak samo w przypadku języka JavaScript. Przykłądowo twoje główne kolory zostały określone w 100 różnych miejscach w stylach. Co w przypadku gdy trzeba je zmienić? Taka prosta
+							rzecz, jak zmiana koloru, ma szacunkową liczbę godzin, a powinno potrwać no najwyżej 5 minut. Na szczęście opracowano narzędzia, które pomagają złagodzić ten ból. Korzystam z wypróbowanej praktyki i stosuj się do zestawu standardów, aby zmiany
+							były łatwe i szybkie. Wszystko to staram sie wykrzystywac w procesie tworzenie części front-endowej, dzieki czemu kod jest spójny, udokumentowany i skuteczny. Pozwala mi to skoncentrować się na potrzebach klientów i nie walczyć z technologią.
 						</p>
 					</div>
-					<div class="col-md-4 col-md-offset-1">
+					<div class="col-sm-4 col-md-offset-1">
 						<div class="row">
 							<div class="col-xs-12">
 								<img src="./images/sass-less.svg" class="large" alt="SASS &amp; LESS">
@@ -324,7 +441,9 @@
 					</div>
 					<div class="col-xs-12">
 						<p>
-							Kodując naszą stronę bardzo ważnym aspektem jest szybkość ładowania sie witryny. Tyczy się to głównie wersji mobilnych, więc już na etapie projektowania musimy wziąść pod uwagę, że nasza strona musi być lekka, a wersja mobilna dopracowana. W innym przypadku ucierpimy na tym w rankingu wyników wyszukiwania w wyszukiwarkach takich jak np.: Google. Użytkownicy oczekują by twoja strona szybko odpowiadała, a niestandardowe czcionki, olbrzymie strony i obrazy czy blokwanie JavaScriptu jest niekorzystne dla wydajności. Osobiście staram sie przebrnąć przez te wszystkie wyzwania. Wiem, czego potrzeba, aby stworzyć dobrą stronę.
+							Kodując naszą stronę bardzo ważnym aspektem jest szybkość ładowania sie witryny. Tyczy się to głównie wersji mobilnych, więc już na etapie projektowania musimy wziąść pod uwagę, że nasza strona musi być lekka, a wersja mobilna dopracowana. W innym przypadku
+							ucierpimy na tym w rankingu wyników wyszukiwania w wyszukiwarkach takich jak np.: Google. Użytkownicy oczekują by twoja strona szybko odpowiadała, a niestandardowe czcionki, olbrzymie strony i obrazy czy blokwanie JavaScriptu jest niekorzystne
+							dla wydajności. Osobiście staram sie przebrnąć przez te wszystkie wyzwania. Wiem, czego potrzeba, aby stworzyć dobrą stronę.
 						</p>
 					</div>
 				</div>
@@ -369,11 +488,11 @@
 		<div class="popup__content">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
+					<div class="col-xs-6 col-md-4 col-md-offset-2">
 						<img src="./images/php.svg" alt="PHP">
 						<p class="space-bottom">Dedykowane systemy CMS w PHP.</p>
 					</div>
-					<div class="col-xs-12 col-sm-6 col-md-4">
+					<div class="col-xs-6 col-md-4">
 						<img src="./images/wordpress.svg" alt="WordPress">
 						<p class="space-bottom">Aż 25% stron używa tego CMS'a. Idealny dla blogów, świetny jako CMS na poziomie początkowym, gdzie nie potrzebujesz wsparcia lub funkcji innych systemów.</p>
 					</div>
@@ -413,7 +532,7 @@
 		<div class="popup__content">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-sm-6 col-sm-offset-2 col-md-4 col-md-offset-4">
+					<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
 						<img src="./images/magento.svg" alt="Magento">
 						<p class="space-bottom">
 							Autonomiczna platforma handlowa oparta na PHP. Dziś jest to jedna z najszybciej rozwijających się i szeroko stosowanych platform e-commerce.
@@ -427,10 +546,12 @@
 					</div>
 					<div class="col-xs-12">
 						<p>
-							Nastały takie czasy, że każdy spodziewa się możliwości dokonywania zakupów online. Jeśli witryna nie oferuje tej funkcji lub jest przestarzała i powolna, tracisz sprzedaż. Duże zdjęcia i wygodne zamawianie jest dobrym kierunkiem handlu elektronicznego. Nie pozwól swojej firmie zostać w tyle.
+							Nastały takie czasy, że każdy spodziewa się możliwości dokonywania zakupów online. Jeśli witryna nie oferuje tej funkcji lub jest przestarzała i powolna, tracisz sprzedaż. Duże zdjęcia i wygodne zamawianie jest dobrym kierunkiem handlu elektronicznego.
+							Nie pozwól swojej firmie zostać w tyle.
 						</p>
 						<p>
-							Jeśli taki obraz sprzedaży Cię nie przekona, to w 2015 roku e-handel wzrósł o 20% w stosunku do roku poprzedniego, podczas gdy tradycyjna sprzedaż detaliczna była niższa. Więcej osób kupowało przez internet w "Cyber ​​Monday" niż w sklepach stacjonarnych na "Black Friday".
+							Jeśli taki obraz sprzedaży Cię nie przekona, to w 2015 roku e-handel wzrósł o 20% w stosunku do roku poprzedniego, podczas gdy tradycyjna sprzedaż detaliczna była niższa. Więcej osób kupowało przez internet w "Cyber ​​Monday" niż w sklepach stacjonarnych
+							na "Black Friday".
 						</p>
 					</div>
 				</div>
@@ -455,6 +576,9 @@
 	<a href="#" class="scroll-top">Scroll To Top</a>
 
 	<script src="./js/scripts.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
 
 </body>
 

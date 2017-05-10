@@ -10,32 +10,57 @@
 		bottom: 35px;
 		right: 35px;
 		padding: 15px;
+		width: 60px;
+		height: 60px;
 	}
 	@media (max-width: $screen-xs-max) {
 		bottom: 20px;
 		right: 20px;
 		padding: 12px;
+		width: 50px;
+		height: 50px;
 	}
 
 	&:hover {
 		@media (min-width: $screen-md-min) {
-			background-color: $c-black;
-			transform: scale(1.05);
+			&:before {
+				transform: translate(-50%, -300%) rotate(-90deg);
+			}
+
+			&:after {
+				transform: translate(-50%, -50%) rotate(-90deg);
+			}
 		}
 	}
 
-	&:before {
+	&:before, &:after {
 		content: '';
 		display: block;
-		transform: rotate(-90deg);
+		position: absolute;
+		top: 50%;
+		left: 50%;
 		background-image: url('../images/arrow.svg');
+		@media (min-width: $screen-md-min) {
+			transition: all 0.2s linear;
+		}
 		@media (min-width: $screen-sm-min) {
 			width: 30px;
 			height: 30px;
 		}
+	}
+
+	&:before {
+		transform: translate(-50%, -50%) rotate(-90deg);
 		@media (max-width: $screen-xs-max) {
 			width: 20px;
 			height: 20px;
+		}
+	}
+
+	&:after {
+		transform: translate(-50%, 300%) rotate(-90deg);
+		@media (max-width: $screen-sm-max) {
+			display: none;
 		}
 	}
 }

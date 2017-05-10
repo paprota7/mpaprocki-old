@@ -1,14 +1,14 @@
 .popup {
-	display: none;
 	position: fixed;
 	z-index: 400;
+	top: 0;
+	display: none;
+	overflow-y: auto;
 	width: 100vw;
 	height: 100vh;
-	top: 0;
-	border: none;
-	padding: 0;
-	overflow-y: auto;
 	max-height: 100vh;
+	padding: 0;
+	border: none;
 	background-color: $c-white;
 	@include clearfix;
 
@@ -17,40 +17,75 @@
 	}
 
 	h2 {
-		text-align: center;
-		font-size: 18px;
 		font-weight: 400;
-		color: $c-white;
 		margin: 0;
+		text-align: center;
+		color: $c-white;
+		@media (min-width: $screen-md-min) {
+			font-size: 18px;
+		}
+		@media (min-width: $screen-sm-min) {
+			font-size: 16px;
+		}
+		@media (max-width: $screen-xs-max) {
+			font-size: 14px;
+		}
 	}
 
 	h3 {
-		font-size: 36px;
-		text-align: center;
 		font-weight: 400;
 		margin: 0;
+		text-align: center;
 		color: $c-white;
+		@media (min-width: $screen-md-min) {
+			font-size: 36px;
+		}
+		@media (min-width: $screen-sm-min) {
+			font-size: 32px;
+		}
+		@media (max-width: $screen-xs-max) {
+			font-size: 26px;
+		}
 
 		&:after {
-			content: '';
+			position: absolute;
 			top: 100%;
 			left: 50%;
-			width: 50px;
-			height: 50px;
 			display: block;
-			position: absolute;
-			background-size: cover;
-			background-repeat: no-repeat;
+			content: '';
 			transform: rotate(90deg) translateY(50%);
 			background-image: url('../images/arrow.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			@media (min-width: $screen-md-min) {
+				width: 50px;
+				height: 50px;
+			}
+			@media (min-width: $screen-sm-min) {
+				width: 40px;
+				height: 40px;
+			}
+			@media (max-width: $screen-xs-max) {
+				width: 30px;
+				height: 30px;
+			}
 		}
 	}
 
 	h4 {
-		font-size: 34px;
-		text-align: center;
 		font-weight: 400;
-		margin: 0 0 20px;
+		text-align: center;
+		@media (min-width: $screen-md-min) {
+			font-size: 34px;
+		}
+		@media (min-width: $screen-sm-min) {
+			font-size: 28px;
+			margin: 0 0 20px;
+		}
+		@media (max-width: $screen-xs-max) {
+			font-size: 22px;
+			margin: 0 0 10px;
+		}
 
 		&.red {
 			color: $c-red;
@@ -62,55 +97,134 @@
 	}
 
 	img {
-		width: 120px;
 		display: block;
-		margin: 0 auto 20px;
-
-		&.small {
-			width: 70px;
+		@media (min-width: $screen-md-min) {
+			width: 120px;
+		}
+		@media (min-width: $screen-sm-min) {
+			width: 100px;
+			margin: 0 auto 20px;
+		}
+		@media (max-width: $screen-xs-max) {
+			width: 60px;
 			margin: 0 auto 10px;
 		}
 
+		&.small {
+			@media (min-width: $screen-md-min) {
+				width: 70px;
+			}
+			@media (min-width: $screen-sm-min) {
+				width: 55px;
+				margin: 0 auto 10px;
+			}
+			@media (max-width: $screen-xs-max) {
+				width: 40px;
+			}
+		}
+
 		&.large {
-			width: 250px;
-			margin: 0 auto;
 			max-width: 100%;
+			margin: 0 auto;
+			@media (min-width: $screen-md-min) {
+				width: 250px;
+			}
+			@media (min-width: $screen-sm-min) {
+				width: 210px;
+			}
+			@media (max-width: $screen-xs-max) {
+				display: block;
+				float: left;
+				width: 120px;
+				margin: 20px 25px 20px 0;
+			}
 
 			& + p {
-				max-width: 280px;
 				line-height: 1.2;
+				@media (min-width: $screen-sm-min) {
+					max-width: 280px;
+				}
+				@media (max-width: $screen-xs-max) {
+					float: right;
+					width: calc(100% - 145px);
+					margin: 20px 0;
+				}
 			}
 		}
 	}
 
 	p {
+		font-weight: 400;
 		max-width: 800px;
 		text-align: center;
-		font-size: 16px;
-		line-height: 1.8;
-		font-weight: 400;
-		margin: 30px auto;
+		@media (min-width: $screen-md-min) {
+			font-size: 16px;
+			line-height: 1.8;
+			margin: 30px auto;
+		}
+		@media (min-width: $screen-sm-min) {
+			font-size: 14px;
+			line-height: 1.6;
+			margin: 20px auto;
+		}
+		@media (max-width: $screen-xs-max) {
+			font-size: 12px;
+			line-height: 1.4;
+			margin: 10px auto 20px;
+		}
 
 		&.text-left {
 			text-align: left;
 		}
 
 		&.large {
-			font-size: 22px;
+			@media (min-width: $screen-md-min) {
+				font-size: 22px;
+			}
+			@media (min-width: $screen-sm-min) {
+				font-size: 18px;
+			}
+			@media (max-width: $screen-xs-max) {
+				font-size: 14px;
+			}
 		}
 	}
 
 	&__content {
-		padding: 10vh 0;
+		@media (min-width: $screen-md-min) {
+			padding: 10vh 0;
+		}
+		@media (min-width: $screen-sm-min) {
+			padding: 7vh 0;
+		}
+		@media (max-width: $screen-xs-max) {
+			padding: 3vh 0;
+		}
 
 		.row + .row {
-			padding-top: 20vh;
+			@media (min-width: $screen-md-min) {
+				padding-top: 20vh;
+			}
+			@media (min-width: $screen-sm-min) {
+				padding-top: 10vh;
+			}
+			@media (max-width: $screen-xs-max) {
+				padding-top: 5vh;
+			}
 		}
 	}
 
 	&__top {
 		background-color: $c-red;
-		padding: 20vh 0 0;
+		@media (min-width: $screen-md-min) {
+			padding: 20vh 0 0;
+		}
+		@media (min-width: $screen-sm-min) {
+			padding: 10vh 0 0;
+		}
+		@media (max-width: $screen-xs-max) {
+			padding: 10vh 0 0;
+		}
 	}
 
 	&__shadow {
@@ -119,57 +233,103 @@
 		}
 
 		.shadow-path-2 {
-			fill: rgba(228, 66, 63, 0.5);
+			fill: rgba(228, 66, 63, .5);
 		}
 	}
 
 	&__technologies {
 		display: flex;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
 		justify-content: center;
 		flex-wrap: wrap;
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
 
 		li {
 			display: block;
-			font-size: 22px;
+			text-transform: uppercase;
 			color: $c-white;
 			background-color: $c-red;
-			padding: 7px 10px 2px;
-			text-transform: uppercase;
-			margin: 3px 5px;
+			@media (min-width: $screen-md-min) {
+				font-size: 22px;
+			}
+			@media (min-width: $screen-sm-min) {
+				font-size: 18px;
+				margin: 3px 5px;
+				padding: 7px 10px 2px;
+			}
+			@media (max-width: $screen-xs-max) {
+				font-size: 14px;
+				margin: 2px 4px;
+				padding: 5px 5px 0;
+			}
 		}
 	}
 
 	&__close {
-		$size: 50px;
-		height: $size;
-		width: $size;
-		position: absolute;
-		top: 50px;
-		right: 50px;
-		box-sizing: border-box;
-		line-height: $size;
-		display: inline-block;
 		font-size: 0;
+		position: absolute;
+		display: inline-block;
+		box-sizing: border-box;
+		$size-desktop: 50px;
+		$size-tablet: 40px;
+		$size-mobile: 30px;
+		@media (min-width: $screen-md-min) {
+			line-height: $size-desktop;
+			top: 50px;
+			right: 50px;
+			width: $size-desktop;
+			height: $size-desktop;
+		}
+		@media (min-width: $screen-sm-min) {
+			line-height: $size-tablet;
+			top: 30px;
+			right: 30px;
+			width: $size-tablet;
+			height: $size-tablet;
+		}
+		@media (max-width: $screen-xs-max) {
+			line-height: $size-mobile;
+			top: 15px;
+			right: 15px;
+			width: $size-mobile;
+			height: $size-mobile;
+		}
 
 		&:after,
 		&:before {
-			$width: 50px;
-			$height: 5px;
-			transform: rotate(-45deg);
-			content: '';
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			margin-top: -$height/2;
-			margin-left: -$width/2;
 			display: block;
-			height: $height;
-			width: $width;
+			content: '';
+			transform: rotate(-45deg);
 			background-color: $c-white;
-			transition: all 0.25s ease-out;
+			$width-desktop: 50px;
+			$width-tablet: 40px;
+			$width-mobile: 30px;
+			$height-desktop: 5px;
+			$height-tablet: 4px;
+			$height-mobile: 3px;
+			@media (min-width: $screen-md-min) {
+				width: $width-desktop;
+				height: $height-desktop;
+				margin-top: -$height-desktop/2;
+				margin-left: -$width-desktop/2;
+				transition: all 0.25s ease-out;
+			}
+			@media (min-width: $screen-sm-min) {
+				width: $width-tablet;
+				height: $height-tablet;
+				margin-top: -$height-tablet/2;
+				margin-left: -$width-tablet/2;
+			}
+			@media (max-width: $screen-xs-max) {
+				width: $width-mobile;
+				height: $height-mobile;
+				margin-top: -$height-mobile/2;
+				margin-left: -$width-mobile/2;
+			}
 		}
 
 		&:after {
@@ -179,7 +339,9 @@
 		&:hover {
 			&:after,
 			&:before {
-				transform: rotate(0deg);
+				@media (min-width: $screen-md-min) {
+					transform: rotate(0deg);
+				}
 			}
 		}
 	}

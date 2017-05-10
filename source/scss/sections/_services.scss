@@ -1,19 +1,30 @@
 .services {
-	@media (min-width: $screen-sm-min) {
-		padding: 80px 0;
-	}
 	@media (max-width: $screen-xs-max) {
 		padding: 10px 0;
+	}
+	@media (min-width: $screen-sm-min) {
+		padding: 0 0 30px;
+	}
+	@media (min-width: $screen-md-min) {
+		padding: 80px 0;
 	}
 
 	&__title {
 		text-align: center;
-		font-weight: 400;
-		@media (min-width: $screen-sm-min) {
-			font-size: 48px;
-		}
+		color: $c-red;
+		font-weight: 700;
+		margin: 0;
+		height: 100%;
 		@media (max-width: $screen-xs-max) {
 			font-size: 28px;
+			line-height: 50px;
+		}
+		@media (min-width: $screen-sm-min) {
+			font-size: 60px;
+			line-height: 100px;
+		}
+		@media (min-width: $screen-md-min) {
+			line-height: 200px;
 		}
 	}
 
@@ -52,13 +63,13 @@
 		&__logo {
 			display: block;
 			transition: all 0.3s linear;
-			@media (min-width: $screen-sm-min) {
-				width: 80px;
-				margin: 40px auto 30px;
-			}
 			@media (max-width: $screen-xs-max) {
 				width: 60px;
 				margin: 10px auto 5px;
+			}
+			@media (min-width: $screen-sm-min) {
+				width: 80px;
+				margin: 40px auto 30px;
 			}
 		}
 
@@ -69,13 +80,13 @@
 			display: inline-block;
 			text-transform: uppercase;
 			color: $c-black;
-			@media (min-width: $screen-sm-min) {
-				font-size: 16px;
-				margin: 10px 0 10px;
-			}
 			@media (max-width: $screen-xs-max) {
 				font-size: 14px;
     			margin: 5px 0 5px;
+			}
+			@media (min-width: $screen-sm-min) {
+				font-size: 16px;
+				margin: 10px 0 10px;
 			}
 
 			&:after {
@@ -100,14 +111,28 @@
 			font-weight: 400;
 			@media (min-width: $screen-sm-min) {
 				font-size: 14px;
-				margin: 10px 0 35px;
 				min-height: 80px;
+				margin: 10px 0 15px;
 			}
 			@media (max-width: $screen-xs-max) {
 				font-size: 10px;
-				margin: 5px auto 10px;
-				min-height: 100px;
+				margin: 5px auto 5px;
 				max-width: 190px;
+			}
+			@media (max-width: $screen-sm-max) and (orientation: portrait) {
+				min-height: 85px;
+			}
+			@media (max-width: $screen-sm-max) and (orientation: landscape) {
+				min-height: 55px;
+			}
+		}
+
+		.button {
+			@media (max-width: $screen-xs-max) {
+				margin: 0 0 20px;
+			}
+			@media (min-width: $screen-sm-min) {
+				margin: 0 0 35px;
 			}
 		}
 	}

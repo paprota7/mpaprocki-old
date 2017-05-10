@@ -58,6 +58,7 @@ gulp.task('js', function() {
         gulp.src('source/js/*.js')
     )
         .pipe(concat('scripts.js'))
+		.pipe(uglify())
         .pipe(sourcemaps.init())
         .pipe(sourcemaps.write('/'))
         .pipe(gulp.dest('js/'))

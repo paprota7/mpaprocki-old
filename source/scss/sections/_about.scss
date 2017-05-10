@@ -1,23 +1,26 @@
 .about {
-	@media (min-width: $screen-sm-min) {
-		padding: 100px 0 100px;
-	}
 	@media (max-width: $screen-xs-max) {
 		padding: 85px 0 10px;
+	}
+	@media (min-width: $screen-sm-min) {
+		padding: 100px 0 50px;
+	}
+	@media (min-width: $screen-md-min) {
+		padding: 100px 0 100px;
 	}
 
 	&__photo {
 		display: block;
 		width: 100%;
 		margin: 0 auto;
-		@media (min-width: $screen-md-min) {
-			max-width: 440px;
+		@media (max-width: $screen-xs-max) {
+			max-width: 180px;
 		}
 		@media (min-width: $screen-sm-min) {
 			max-width: 320px;
 		}
-		@media (max-width: $screen-xs-max) {
-			max-width: 180px;
+		@media (min-width: $screen-md-min) {
+			max-width: 440px;
 		}
 	}
 
@@ -27,13 +30,13 @@
 		line-height: 1.8;
 		font-weight: 400;
 
-		@media (min-width: $screen-sm-min) {
-			font-size: 16px;
-			margin: 50px auto 20px;
-		}
 		@media (max-width: $screen-xs-max) {
 			font-size: 12px;
 			margin: 20px auto 0;
+		}
+		@media (min-width: $screen-sm-min) {
+			font-size: 16px;
+			margin: 50px auto 20px;
 		}
 
 		strong {

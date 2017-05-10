@@ -1,0 +1,27 @@
+.contact {
+	overflow: hidden;
+	@media (max-width: $screen-xs-max) {
+		margin: 0 0 90px;
+	}
+	@media (min-width: $screen-sm-min) {
+		margin: 0 0 200px;
+	}
+	&__title {
+		text-align: center;
+		color: $c-red;
+		font-weight: 700;
+		margin: 0;
+		height: 100%;
+		@media (max-width: $screen-xs-max) {
+			font-size: 28px;
+			line-height: 50px;
+		}
+		@media (min-width: $screen-sm-min) {
+			font-size: 60px;
+			line-height: 100px;
+		}
+		@media (min-width: $screen-md-min) {
+			line-height: 200px;
+		}
+	}
+}
